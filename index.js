@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+console.log("DB URL:", process.env.MONGO_URI);
 const express = require("express");
 
 const { connectMongoDB} = require("./connection/url");
@@ -25,6 +25,7 @@ app.use(checkForAuthentication);
 const PORT = 8002;
 
 connectMongoDB(process.env.MONGODB_URL);
+
 
 app.get("/test", async (req,res) => {
     const allURLs = await URL.find({});
