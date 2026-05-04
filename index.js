@@ -24,7 +24,7 @@ app.use(checkForAuthentication);
 
 const PORT = 8002;
 
-connectMongoDB("mongodb+srv://hepisonii_db_user:cneV6sm9bfZavAy4@cluster0.xewt159.mongodb.net/");
+connectMongoDB(process.env.MONGODB_URL);
 
 app.get("/test", async (req,res) => {
     const allURLs = await URL.find({});
