@@ -15,7 +15,8 @@ async function handleCreateShortUrl(req,res){
     console.log("test: ", test);
     if(test){
         return res.render("home", {
-            id: test.shortId
+            id: test.shortId,
+            user: req.user
         });
     }
     const shortId = shortid();
@@ -26,7 +27,8 @@ async function handleCreateShortUrl(req,res){
         createdBy: req.user._id
     });
     return res.render("home", {
-        id: shortId
+        id: shortId,
+        user: req.user,
     });
 }
 
