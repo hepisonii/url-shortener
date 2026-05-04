@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <h1> Login Up Form </h1>
+    <h1> Login Form </h1>
     <form method="POST" action="/user/login">
         <table>
             <tr>
@@ -46,5 +46,6 @@
     <% if (locals.error) { %>
             <p style="color:red"> <%= error %></p>
     <% } %>
+    <pre><a href="/signup">Sign Up</a></pre>
 </body>
 </html>
